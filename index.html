@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Shipment Booking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <img src="TRUCK----PNG.png"
+            class="truck-logo" alt="Cargo truck">
+            <h1>Cargo Shipment Booking System</h1>
+        </div>
+        
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#booking">Book Shipment</a>
+        <a href="#tracking">Track Shipment</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to Cargo Express</h2>
+        <p>Book and track your cargo shipments easily.</p>
+        <a href="#booking">Book Now</a>
+    </section>
+
+    <section id="booking">
+        <h2>Book Your Shipment</h2>
+
+        <form id="bookingForm">
+
+            <h3>Sender Details</h3>
+
+<div class="form-row">
+    <div class="form-group">
+        <label>Sender Name</label>
+        <input type="text" id="senderName" required>
+    </div>
+
+    <div class="form-group">
+        <label>Sender Phone</label>
+        <input type="tel" id="senderPhone" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Pickup Address</label>
+    <textarea id="pickupAddress" required></textarea>
+</div>
+
+            <h3>Receiver Details</h3>
+
+<div class="form-row">
+    <div class="form-group">
+        <label>Receiver Name</label>
+        <input type="text" id="receiverName" required>
+    </div>
+
+    <div class="form-group">
+        <label>Receiver Phone</label>
+        <input type="tel" id="receiverPhone" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Delivery Address</label>
+    <textarea id="deliveryAddress" required></textarea>
+</div>
+
+            <h3>Cargo Details</h3>
+
+            <label>Cargo Type</label>
+            <select id="cargoType" required>
+                <option value="">Select Cargo Type</option>
+                <option>Documents</option>
+                <option>Electronics</option>
+                <option>Furniture</option>
+                <option>Clothing</option>
+                <option>Other</option>
+            </select>
+
+            <label>Weight (kg)</label>
+            <input type="number" id="weight" min="1" required>
+
+            <label>Shipment Type</label>
+            <select id="shipmentType" required>
+                <option value="">Select Shipment Type</option>
+                <option value="Standard">Standard</option>
+                <option value="Express">Express</option>
+            </select>
+
+            <button type="submit">Book Shipment</button>
+
+        </form>
+
+        <div id="bookingResult"></div>
+    </section>
+
+    <section id="tracking">
+        <h2>Track Your Shipment</h2>
+
+        <input type="text" id="trackingId"
+               placeholder="Enter Tracking ID">
+
+        <button type="button" id="trackButton">
+            Track Shipment
+        </button>
+
+        <div id="trackingResult"></div>
+    </section>
+    <section id="admin">
+    <h2>Admin - Update Shipment Status</h2>
+
+    <div class="form-group">
+        <label>Tracking ID</label>
+        <input type="text" id="adminTrackingId"
+               placeholder="Enter Tracking ID">
+    </div>
+
+    <div class="form-group">
+        <label>Update Status</label>
+        <select id="newStatus">
+            <option value="Booked">Booked</option>
+            <option value="In Transit">In Transit</option>
+            <option value="Out for Delivery">Out for Delivery</option>
+            <option value="Delivered">Delivered</option>
+        </select>
+    </div>
+
+    <button onclick="updateShipmentStatus()">
+        Update Status
+    </button>
+
+    <p id="adminResult"></p>
+</section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: cargo@example.com</p>
+        <p>Phone: +91 9876543210</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Cargo Shipment Booking System</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
